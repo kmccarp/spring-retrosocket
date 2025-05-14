@@ -1,12 +1,12 @@
 package org.springframework.retrosocket.qualifiers.greetings;
 
+import javax.annotation.PostConstruct;
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Profile;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Mono;
-
-import javax.annotation.PostConstruct;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

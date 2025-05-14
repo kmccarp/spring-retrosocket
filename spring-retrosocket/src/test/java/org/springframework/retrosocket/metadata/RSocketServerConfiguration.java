@@ -1,5 +1,7 @@
 package org.springframework.retrosocket.metadata;
 
+import javax.annotation.PostConstruct;
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.rsocket.messaging.RSocketStrategiesCustomizer;
@@ -7,8 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.codec.StringDecoder;
-
-import javax.annotation.PostConstruct;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

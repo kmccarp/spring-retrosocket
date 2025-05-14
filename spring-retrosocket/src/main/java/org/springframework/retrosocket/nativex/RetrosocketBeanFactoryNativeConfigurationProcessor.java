@@ -1,5 +1,7 @@
 package org.springframework.retrosocket.nativex;
 
+import java.util.Map;
+
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.aot.context.bootstrap.generator.infrastructure.nativex.BeanFactoryNativeConfigurationProcessor;
@@ -8,8 +10,6 @@ import org.springframework.aot.context.bootstrap.generator.infrastructure.native
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.nativex.hint.TypeAccess;
 import org.springframework.retrosocket.RSocketClient;
-
-import java.util.Map;
 
 /**
  * See

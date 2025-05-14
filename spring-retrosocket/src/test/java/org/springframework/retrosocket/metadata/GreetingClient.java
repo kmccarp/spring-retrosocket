@@ -1,12 +1,12 @@
 package org.springframework.retrosocket.metadata;
 
+import java.util.Map;
+
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.retrosocket.RSocketClient;
 import reactor.core.publisher.Mono;
-
-import java.util.Map;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

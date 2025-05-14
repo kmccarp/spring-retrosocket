@@ -1,5 +1,7 @@
 package org.springframework.retrosocket.simple;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -12,8 +14,6 @@ import org.springframework.util.SocketUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>
@@ -45,7 +45,7 @@ public class RSocketClientTest {
 				Mono.just("Hello"));
 		StepVerifier//
 				.create(greetingResponseFlux)//
-				.expectNextMatches(gr -> gr.equalsIgnoreCase("Hello"))//
+				.expectNextMatches("Hello"::equalsIgnoreCase)//
 				.verifyComplete();
 	}
 

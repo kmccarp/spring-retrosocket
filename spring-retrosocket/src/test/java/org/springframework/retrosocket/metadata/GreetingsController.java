@@ -1,5 +1,8 @@
 package org.springframework.retrosocket.metadata;
 
+import java.util.Collections;
+import java.util.Map;
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Profile;
 import org.springframework.messaging.handler.annotation.Headers;
@@ -7,9 +10,6 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Mono;
-
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

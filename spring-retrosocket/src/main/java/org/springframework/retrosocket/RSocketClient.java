@@ -1,10 +1,10 @@
 package org.springframework.retrosocket;
 
-import org.springframework.stereotype.Indexed;
+import static java.lang.annotation.ElementType.TYPE;
 
 import java.lang.annotation.*;
 
-import static java.lang.annotation.ElementType.TYPE;
+import org.springframework.stereotype.Indexed;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

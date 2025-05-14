@@ -5,8 +5,8 @@ package org.springframework.retrosocket.qualifiers;
  */
 public class Constants {
 
-	public final static String QUALIFIER_1 = "service1";
+	public static final String QUALIFIER_1 = "service1";
 
-	public final static String QUALIFIER_2 = "service2";
+	public static final String QUALIFIER_2 = "service2";
 
 }

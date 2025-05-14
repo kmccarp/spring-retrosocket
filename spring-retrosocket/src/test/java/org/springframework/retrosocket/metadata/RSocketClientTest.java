@@ -38,10 +38,9 @@ public class RSocketClientTest {
 	}
 
 	private ConfigurableApplicationContext runClient(int port) {
-		ConfigurableApplicationContext context = new SpringApplicationBuilder(RSocketClientConfiguration.class)//
+		return new SpringApplicationBuilder(RSocketClientConfiguration.class)//
 				.web(WebApplicationType.NONE)//
 				.run("--service.port=" + port, "--spring.profiles.active=client");
-		return context;
 	}
 
 }

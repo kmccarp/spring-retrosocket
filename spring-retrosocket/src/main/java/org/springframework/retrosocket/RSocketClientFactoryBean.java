@@ -1,5 +1,7 @@
 package org.springframework.retrosocket;
 
+import java.util.Map;
+
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -13,8 +15,6 @@ import org.springframework.core.annotation.MergedAnnotation;
 import org.springframework.core.annotation.MergedAnnotations;
 import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.util.Assert;
-
-import java.util.Map;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

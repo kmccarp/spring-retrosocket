@@ -1,5 +1,11 @@
 package org.springframework.retrosocket;
 
+import java.io.IOException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.FactoryBean;
@@ -17,12 +23,6 @@ import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
-
-import java.io.IOException;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>
@@ -42,14 +42,15 @@ class RSocketClientsRegistrar implements ImportBeanDefinitionRegistrar, Environm
 		ClassPathScanningCandidateComponentProvider scanner = this.buildScanner();
 		basePackages.forEach(basePackage -> scanner.findCandidateComponents(basePackage)//
 				.stream()//
-				.filter(cc -> cc instanceof AnnotatedBeanDefinition)//
-				.map(abd -> (AnnotatedBeanDefinition) abd)//
+				.filter(AnnotatedBeanDefinition.class::isInstance)//
+				.map(AnnotatedBeanDefinition.class::cast)//
 				.forEach(beanDefinition -> {
 					AnnotationMetadata annotationMetadata = beanDefinition.getMetadata();
 					boolean isClient = annotationMetadata.getAnnotationTypes().stream()
 							.anyMatch(s -> s.equals(RSocketClient.class.getName()));
-					if (!isClient)
-						return;
+            if (!isClient) {
+                return;
+            }
 					this.registerClient(annotationMetadata, registry);
 				}));
 	}

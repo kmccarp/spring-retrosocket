@@ -1,5 +1,9 @@
 package org.springframework.retrosocket.simple;
 
+import javax.annotation.PostConstruct;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Stream;
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Profile;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
@@ -8,10 +12,6 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import javax.annotation.PostConstruct;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Stream;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>

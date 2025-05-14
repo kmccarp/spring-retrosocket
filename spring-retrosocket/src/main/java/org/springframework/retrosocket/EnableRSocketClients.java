@@ -1,8 +1,8 @@
 package org.springframework.retrosocket;
 
-import org.springframework.context.annotation.Import;
-
 import java.lang.annotation.*;
+
+import org.springframework.context.annotation.Import;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>
